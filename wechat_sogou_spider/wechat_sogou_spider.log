@@ -1,0 +1,166 @@
+2018-07-06 11:37:50 [scrapy.utils.log] INFO: Scrapy 1.5.0 started (bot: wechat_sogou_spider)
+2018-07-06 11:37:50 [scrapy.utils.log] INFO: Versions: lxml 3.7.1.0, libxml2 2.9.4, cssselect 1.0.1, parsel 1.2.0, w3lib 1.18.0, Twisted 16.4.1, Python 2.7.10 (default, Oct  6 2017, 22:29:07) - [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.31)], pyOpenSSL 0.13.1 (LibreSSL 2.2.7), cryptography 2.1.4, Platform Darwin-17.6.0-x86_64-i386-64bit
+2018-07-06 11:37:50 [scrapy.crawler] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'wechat_sogou_spider.spiders', 'CONCURRENT_REQUESTS': 5, 'SPIDER_MODULES': ['wechat_sogou_spider.spiders'], 'BOT_NAME': 'wechat_sogou_spider', 'DEPTH_PRIORITY': 1, 'LOG_FILE': 'wechat_sogou_spider.log', 'DOWNLOAD_DELAY': 2}
+2018-07-06 11:37:50 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2018-07-06 11:37:50 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-07-06 11:37:50 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-07-06 11:37:50 [scrapy.middleware] INFO: Enabled item pipelines:
+['scrapy_redis.pipelines.RedisPipeline']
+2018-07-06 11:37:50 [scrapy.core.engine] INFO: Spider opened
+2018-07-06 11:37:50 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-07-06 11:37:50 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-07-06 11:37:50 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%E4%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> from <GET http://weixin.sogou.com/weixin?usip=&query=%E4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8>
+2018-07-06 11:37:53 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%B8%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> from <GET http://weixin.sogou.com/weixin?usip=&query=%B8&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8>
+2018-07-06 11:37:55 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%AD%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> from <GET http://weixin.sogou.com/weixin?usip=&query=%AD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8>
+2018-07-06 11:37:58 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%E5%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> from <GET http://weixin.sogou.com/weixin?usip=&query=%E5&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8>
+2018-07-06 11:38:01 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%B1%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> from <GET http://weixin.sogou.com/weixin?usip=&query=%B1&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8>
+2018-07-06 11:38:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%E4%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 11:38:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%B8%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 11:38:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%AD%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 11:38:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%E5%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 11:38:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%B1%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 11:38:17 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%B1%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> from <GET http://weixin.sogou.com/weixin?usip=&query=%B1&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8>
+2018-07-06 11:38:20 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%E5%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> from <GET http://weixin.sogou.com/weixin?usip=&query=%E5&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8>
+2018-07-06 11:38:22 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%A4%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> from <GET http://weixin.sogou.com/weixin?usip=&query=%A4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8>
+2018-07-06 11:38:24 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%A7%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> from <GET http://weixin.sogou.com/weixin?usip=&query=%A7&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8>
+2018-07-06 11:38:26 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%E5%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> from <GET http://weixin.sogou.com/weixin?usip=&query=%E5&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8>
+2018-07-06 11:38:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%B1%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 11:38:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%E5%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 11:38:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%A4%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 11:38:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%A7%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 11:38:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%E5%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 11:38:40 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%AD%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> from <GET http://weixin.sogou.com/weixin?usip=&query=%AD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8>
+2018-07-06 11:38:42 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%A6%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> from <GET http://weixin.sogou.com/weixin?usip=&query=%A6&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8>
+2018-07-06 11:38:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%AD%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 11:38:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/antispider/?from=%2fweixin%3Fusip%3d%26query%3d%A6%26ft%3d%26tsn%3d1%26et%3d%26interation%3d%26type%3d2%26wxid%3d%26page%3d1%26ie%3dutf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 11:38:48 [scrapy.core.engine] INFO: Closing spider (finished)
+2018-07-06 11:38:48 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 20950,
+ 'downloader/request_count': 24,
+ 'downloader/request_method_count/GET': 24,
+ 'downloader/response_bytes': 37289,
+ 'downloader/response_count': 24,
+ 'downloader/response_status_count/200': 12,
+ 'downloader/response_status_count/302': 12,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 7, 6, 3, 38, 48, 602793),
+ 'log_count/DEBUG': 25,
+ 'log_count/INFO': 7,
+ 'memusage/max': 52346880,
+ 'memusage/startup': 52338688,
+ 'response_received_count': 12,
+ 'scheduler/dequeued': 24,
+ 'scheduler/dequeued/memory': 24,
+ 'scheduler/enqueued': 24,
+ 'scheduler/enqueued/memory': 24,
+ 'start_time': datetime.datetime(2018, 7, 6, 3, 37, 50, 162776)}
+2018-07-06 11:38:48 [scrapy.core.engine] INFO: Spider closed (finished)
+2018-07-06 14:09:16 [scrapy.utils.log] INFO: Scrapy 1.5.0 started (bot: wechat_sogou_spider)
+2018-07-06 14:09:16 [scrapy.utils.log] INFO: Versions: lxml 3.7.1.0, libxml2 2.9.4, cssselect 1.0.1, parsel 1.2.0, w3lib 1.18.0, Twisted 16.4.1, Python 2.7.10 (default, Oct  6 2017, 22:29:07) - [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.31)], pyOpenSSL 0.13.1 (LibreSSL 2.2.7), cryptography 2.1.4, Platform Darwin-17.6.0-x86_64-i386-64bit
+2018-07-06 14:09:16 [scrapy.crawler] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'wechat_sogou_spider.spiders', 'CONCURRENT_REQUESTS': 5, 'SPIDER_MODULES': ['wechat_sogou_spider.spiders'], 'BOT_NAME': 'wechat_sogou_spider', 'DEPTH_PRIORITY': 1, 'LOG_FILE': 'wechat_sogou_spider.log', 'DOWNLOAD_DELAY': 2}
+2018-07-06 14:09:16 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2018-07-06 14:09:16 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-07-06 14:09:16 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-07-06 14:09:16 [scrapy.middleware] INFO: Enabled item pipelines:
+['scrapy_redis.pipelines.RedisPipeline']
+2018-07-06 14:09:16 [scrapy.core.engine] INFO: Spider opened
+2018-07-06 14:09:16 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-07-06 14:09:16 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-07-06 14:09:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%E4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 14:09:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%B8&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 14:09:19 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET http://weixin.sogou.com/weixin?usip=&query=%EF%BF%BD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=2&ie=utf8> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2018-07-06 14:09:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%AD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 14:09:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%E5&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 14:09:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%B1&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 14:09:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%B1&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 14:09:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%EF%BF%BD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=10&ie=utf8> (referer: http://weixin.sogou.com/weixin?usip=&query=%E4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8)
+2018-07-06 14:09:31 [sogou_wechat] DEBUG: Request Fail!!!
+2018-07-06 14:09:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%EF%BF%BD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=9&ie=utf8> (referer: http://weixin.sogou.com/weixin?usip=&query=%E4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8)
+2018-07-06 14:09:33 [sogou_wechat] DEBUG: Request Fail!!!
+2018-07-06 14:09:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%EF%BF%BD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=8&ie=utf8> (referer: http://weixin.sogou.com/weixin?usip=&query=%E4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8)
+2018-07-06 14:09:36 [sogou_wechat] DEBUG: Request Fail!!!
+2018-07-06 14:09:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%EF%BF%BD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=7&ie=utf8> (referer: http://weixin.sogou.com/weixin?usip=&query=%E4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8)
+2018-07-06 14:09:39 [sogou_wechat] DEBUG: Request Fail!!!
+2018-07-06 14:09:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%EF%BF%BD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=6&ie=utf8> (referer: http://weixin.sogou.com/weixin?usip=&query=%E4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8)
+2018-07-06 14:09:40 [sogou_wechat] DEBUG: Request Fail!!!
+2018-07-06 14:09:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%EF%BF%BD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=5&ie=utf8> (referer: http://weixin.sogou.com/weixin?usip=&query=%E4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8)
+2018-07-06 14:09:42 [sogou_wechat] DEBUG: Request Fail!!!
+2018-07-06 14:09:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%EF%BF%BD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=4&ie=utf8> (referer: http://weixin.sogou.com/weixin?usip=&query=%E4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8)
+2018-07-06 14:09:45 [sogou_wechat] DEBUG: Request Fail!!!
+2018-07-06 14:09:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%EF%BF%BD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=3&ie=utf8> (referer: http://weixin.sogou.com/weixin?usip=&query=%E4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8)
+2018-07-06 14:09:47 [sogou_wechat] DEBUG: Request Fail!!!
+2018-07-06 14:09:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%EF%BF%BD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=2&ie=utf8> (referer: http://weixin.sogou.com/weixin?usip=&query=%E4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8)
+2018-07-06 14:09:50 [sogou_wechat] DEBUG: Request Fail!!!
+2018-07-06 14:09:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%EF%BF%BD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8> (referer: http://weixin.sogou.com/weixin?usip=&query=%EF%BF%BD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=10&ie=utf8)
+2018-07-06 14:09:53 [sogou_wechat] DEBUG: Request Fail!!!
+2018-07-06 14:09:55 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2018-07-06 14:09:55 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2018-07-06 14:09:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%E5&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 14:09:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%A4&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 14:10:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%A7&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 14:10:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%E5&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 14:10:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weixin.sogou.com/weixin?usip=&query=%AD&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8> (referer: http://weixin.sogou.com/weixin?type=2&query=%22%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%22&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=5&sourceid=sugg&sut=0&sst0=1530846666531&lkt=0%2C0%2C0&p=40040108)
+2018-07-06 14:10:06 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 16735,
+ 'downloader/request_count': 21,
+ 'downloader/request_method_count/GET': 21,
+ 'downloader/response_bytes': 276870,
+ 'downloader/response_count': 21,
+ 'downloader/response_status_count/200': 21,
+ 'dupefilter/filtered': 169,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2018, 7, 6, 6, 10, 6, 766248),
+ 'log_count/DEBUG': 33,
+ 'log_count/INFO': 8,
+ 'memusage/max': 52416512,
+ 'memusage/startup': 52416512,
+ 'request_depth_max': 3,
+ 'response_received_count': 21,
+ 'scheduler/dequeued': 21,
+ 'scheduler/dequeued/memory': 21,
+ 'scheduler/enqueued': 21,
+ 'scheduler/enqueued/memory': 21,
+ 'start_time': datetime.datetime(2018, 7, 6, 6, 9, 16, 271568)}
+2018-07-06 14:10:06 [scrapy.core.engine] INFO: Spider closed (shutdown)

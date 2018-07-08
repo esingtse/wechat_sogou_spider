@@ -5,59 +5,84 @@
 # @File    : sogou_spider.py
 # @Software: PyCharm
 
-# If this runs wrong, don't ask me, I don't know why;
-# If this runs right, thank god, and I don't know why.
-import scrapy
-from scrapy.spiders.crawl import CrawlSpider,Rule
+from scrapy.spiders.crawl import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
+from urllib import quote
 from scrapy.selector import Selector
-import re,requests
-from urllib import  quote
-from scrapy.http.cookies import CookieJar
+from scrapy_redis.connection import get_redis_from_settings
+from wechat_sogou_spider.settings import REDIS_START_URLS_KEY, KEYWORDS
+import redis
 
-class DmozSpider(CrawlSpider):
-    name = "dmoz"
-    # keyword = '中山大学'
-    # start_urls = ['http://weixin.sogou.com/weixin?type=2&s_from=input&query=%s&ie=utf8&_sug_=n&_sug_type_=' % (
-    #     quote(keyword))]
-    #
-    #
-    # rules = (
-    #     Rule(LinkExtractor(allow="^http://weixin.sogou.com/\S*page=\d+&ie=utf8$"), callback='parse_a', follow=True, ),
-    # )
+class SougouSpider(CrawlSpider):
+    name = "sogou_wechat"
+    start_urls = []
+    for keyword in KEYWORDS:
+        url = 'http://weixin.sogou.com/weixin?usip=&query=%s&ft=&tsn=1&et=&interation=&type=2&wxid=&page=1&ie=utf8' % (
+            quote(keyword))
+        start_urls.append(url)
 
+    # CrawSpider的规则
+    rules = (
+        # 下一页的所有链接
+        Rule(
+            LinkExtractor(
+                allow="^http://weixin.sogou.com/\S*page=\d+&ie=utf8$"),
+            callback='parse_article_link',
+            follow=True),
 
-    def start_requests(self):
-        header = {}
-        url = 'http://weixin.sogou.com/weixin?type=2&ie=utf8&query=%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6&tsn=1&ft=&et=&interation=&wxid=&usip='
+        # 文章URL的所有链接
+        # Rule(LinkExtractor(allow="^http://mp.weixin.qq.com\S*new=1$",
+        # restrict_xpaths='//div[@class="txt-box"]/h3/a'),
+        # callback='parse_article_link', follow=True),
+    )
 
-        cookies = 'SUV=1523436225574618; SMYUV=1523436225575213; UM_distinctid=162b3e0091a2ba-01fc39976b5738-3a614f0b-2a3000-162b3e0091da3; CXID=54EFD3B6AF8E1180937038ED9DF037BC; SUID=D8E617743665860A5ACF2C9A0007454B; IPLOC=CN4401; ad=53VSSkllll2z8hhzlllllV7ffg9lllllNxKuLlllll9llllllZlll5@@@@@@@@@@; SUIR=33753809797D17825CCBDA08796168C7; SNUID=92B2FACABBBECC8A2CF8B16DBC6A438F; sct=15'
+    # 抓取配置，覆盖SETTINGS的配置
+    custom_settings = {
+        'CONCURRENT_REQUESTS': 5,
+        'DOWNLOAD_DELAY': 2,
+        'CONCURRENT_REQUESTS_PER_DOMAIN': 8,
+        'DEPTH_LIMITD': 0,
+        'DEPTH_PRIORITY': 1,
+    }
 
-        c = self.stringToDict(cookies)
-        print c
-        req = scrapy.Request(url=url,callback=self.parse_b,cookies=c)
-        yield req
-
-
-    def parse_b(self, response):
-        print response.status
-        print response.url
-
-    def parse_a(self, response):
-        # selector = Selector(response)
-        # url = selector.xpath('//img[@class="pic-large"]')
-        print response.url
-
-    def stringToDict(self, cookies):
+    def parse_article_link(self, response):
         '''
-        转cookes
-        :param cookies:
-        :return:
+        解析每页的文章临时URL
+        :param response: 网页响应内容
+        :return: 将结果存入Redis
         '''
-        itemDict = {}
-        items = cookies.split(';')
-        for item in items:
-            key = item.split('=')[0].replace(' ', '')
-            value = item.split('=')[1]
-            itemDict[key] = value
-        return itemDict
+        if response.status == '200':
+            selector = Selector(response)
+            article_links = selector.xpath(
+                '//div[@class="txt-box"]/h3/a/@href')
+            for link in article_links:
+                # 将url写入redis
+                try:
+                    redis_config = {
+                        "host": "192.168.0.202",
+                        "port": 6379
+                    }
+                    self.redis_server = redis.Redis(**redis_config)
+                    self.redis_server.lpush(
+                        REDIS_START_URLS_KEY, 'http://mp.weixin.qq.com/s?src=11&timestamp=1530866775&ver=981&signature=LceXK8mpsPymlMCyqEFmZ9YWtOC*UxKBJzob2NqSEqUSGF*6o9a4iJp9GU2-1qjn1e4*9VNAqlZ1fKQqmLX6SkJNdT4OU*Fkkn-CNWdrLl5CLKMw9qmBFngzBFfwcoOU&new=1')
+                    print 111111
+                except Exception as ex:
+                    self.log(
+                        'redis lpush failed!!! page_url:{0} error:{1}'.format(
+                            '1', ex))
+        else:
+            self.log('Request Fail!!!')
+
+    # def exchange_cookies(self, cookies):
+    #     '''
+    #     转cookes
+    #     :param cookies:
+    #     :return:
+    #     '''
+    #     itemDict = {}
+    #     items = cookies.split(';')
+    #     for item in items:
+    #         key = item.split('=')[0].replace(' ', '')
+    #         value = item.split('=')[1]
+    #         itemDict[key] = value
+    #     return itemDict

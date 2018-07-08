@@ -7,8 +7,11 @@
 
 import scrapy
 
-
 class WechatSogouSpiderItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    title = scrapy.Field()
+    pub_time = scrapy.Field()
+    content = scrapy.Field()
+    page_url = scrapy.Field()
+    site_name = scrapy.Field()
+    site_domain = scrapy.Field()
+    grab_time = scrapy.Field()
